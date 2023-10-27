@@ -21,5 +21,6 @@ abstract class Parent(
     open var name: String,
 
     @Column(name = "STATUS")
-    open var status: String
+    @Enumerated(EnumType.STRING)
+    open var status: Status
 )

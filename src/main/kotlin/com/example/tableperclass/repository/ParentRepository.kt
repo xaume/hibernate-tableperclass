@@ -8,7 +8,7 @@ import java.util.*
 interface ParentRepository: JpaRepository<Parent, UUID> {
 
     companion object {
-        const val PARENT_IN_STATUS = "p.status IN ('ACTIVE')"
+        const val PARENT_IN_STATUS = "p.status IN (com.example.tableperclass.model.Status.ACTIVE)"
     }
 
     @Query(value = "SELECT p FROM Parent p WHERE $PARENT_IN_STATUS")

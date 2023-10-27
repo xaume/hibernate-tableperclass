@@ -10,7 +10,7 @@ import javax.persistence.Table
 class Child(
     override var id: UUID? = null,
     override var name: String,
-    override var status: String,
+    override var status: Status,
 
     @Column(name= "AMOUNT")
     var amount: Int = 0
