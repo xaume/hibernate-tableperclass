@@ -1,7 +1,6 @@
 package com.example.tableperclass.repository
 
 import com.example.tableperclass.model.Child
-import com.example.tableperclass.model.Status
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -31,7 +30,6 @@ class ParentRepositoryITest {
             Child(
                 id = UUID.randomUUID(),
                 name = "Child 1",
-                status = Status.ACTIVE,
                 amount = 10
             )
         )
@@ -39,9 +37,8 @@ class ParentRepositoryITest {
             Child(
                 id = UUID.randomUUID(),
                 name = "Child 2",
-                status = Status.INACTIVE,
                 amount = 20
-            )
+            ).markInactive()
         )
 
         // WHEN
@@ -49,6 +46,7 @@ class ParentRepositoryITest {
 
         // THEN
         assertThat(result).hasSize(1)
+
     }
 
 }

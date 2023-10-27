@@ -22,5 +22,7 @@ abstract class Parent(
 
     @Column(name = "STATUS")
     @Enumerated(EnumType.STRING)
-    open var status: Status
-)
+    open var status: Status = Status.ACTIVE
+) {
+    abstract fun markInactive(): Parent
+}

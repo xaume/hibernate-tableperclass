@@ -10,13 +10,20 @@ import jakarta.persistence.Table
 data class Child(
     override var id: UUID? = null,
     override var name: String,
-    override var status: Status,
+    override var status: Status = Status.ACTIVE,
 
     @Column(name= "AMOUNT")
     var amount: Int = 0
 
 ) : Parent(
     id = id,
-    name = name,
-    status = status
-)
+    name = name
+) {
+    override fun markInactive(): Parent {
+        this.status = Status.INACTIVE
+        // enabling this line makes it work,
+        // setting the right status for the parent
+        //super.status = Status.INACTIVE
+        return this
+    }
+}
