@@ -1,6 +1,7 @@
 package com.example.tableperclass.repository
 
 import com.example.tableperclass.model.Child
+import com.example.tableperclass.model.Status
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -11,7 +12,6 @@ import java.util.*
 
 @DataJpaTest
 class ParentRepositoryITest {
-
 
     @Autowired
     private lateinit var repository: ParentRepository
@@ -31,7 +31,7 @@ class ParentRepositoryITest {
             Child(
                 id = UUID.randomUUID(),
                 name = "Child 1",
-                status = "ACTIVE",
+                status = Status.ACTIVE,
                 amount = 10
             )
         )
@@ -39,7 +39,7 @@ class ParentRepositoryITest {
             Child(
                 id = UUID.randomUUID(),
                 name = "Child 2",
-                status = "INACTIVE",
+                status = Status.INACTIVE,
                 amount = 20
             )
         )

@@ -1,16 +1,16 @@
 package com.example.tableperclass.model
 
 import java.util.*
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Table
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.Table
 
 @Entity
 @Table(name = "CHILD")
-class Child(
+data class Child(
     override var id: UUID? = null,
     override var name: String,
-    override var status: String,
+    override var status: Status,
 
     @Column(name= "AMOUNT")
     var amount: Int = 0
