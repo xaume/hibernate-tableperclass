@@ -12,5 +12,5 @@ interface ParentRepository: JpaRepository<Parent, UUID> {
     }
 
     @Query(value = "SELECT p FROM Parent p WHERE $PARENT_IN_STATUS")
-    fun findAllExisting(): List<Parent>
+    fun findAllActive(): List<Parent>
 }

@@ -21,9 +21,8 @@ data class Child(
 ) {
     override fun markInactive(): Parent {
         this.status = Status.INACTIVE
-        // enabling this line makes it work,
-        // setting the right status for the parent
-        //super.status = Status.INACTIVE
+        // FIXME: enabling this line makes it work, setting the right status when persisting the entity
+        // super.status = Status.INACTIVE
         return this
     }
 }

@@ -13,3 +13,5 @@ spring:
     parameters:
       schema: PUBLIC
     default-schema: PUBLIC
+  h2:
+    console.enabled: true

@@ -42,7 +42,7 @@ class ParentRepositoryITest {
         )
 
         // WHEN
-        val result = repository.findAllExisting()
+        val result = repository.findAllActive()
 
         // THEN
         assertThat(result).hasSize(1)
