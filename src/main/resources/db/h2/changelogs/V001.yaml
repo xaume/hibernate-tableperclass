@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-tables
+      author: jaime
+      comment: Initial creation of table
+      dbms: h2
+      preConditions:
+        - runAlways: false
+        - runOnChange: false
+        - onFail: HALT
+        - onError: HALT
+      changes:
+        - createTable:
+            tableName: CHILD
+            columns:
+              - column:
+                  name: ID
+                  type: NVARCHAR(36)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: NAME
+                  type: NVARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: STATUS
+                  type: NVARCHAR(36)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: AMOUNT
+                  type: INTEGER
+                  constraints:
+                    nullable: false
