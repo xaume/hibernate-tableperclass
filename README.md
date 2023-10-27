@@ -20,4 +20,5 @@ In step number 2, after modifying the attribute, this is only changed for the `C
 
 
 Apparently, when Hibernate saves the entity, it's taking the value from the `Parent` instead of the value from the `Child`.
+
 This didn't happen with Spring Boot 2.x + Hibernate 5.x
