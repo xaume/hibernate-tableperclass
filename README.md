@@ -1,5 +1,5 @@
 # Hibernate 6 inheritance issue
-The project contains two entities:
+The application contains two entities:
 * Parent
 * Child
   
