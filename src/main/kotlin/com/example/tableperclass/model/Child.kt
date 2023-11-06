@@ -12,16 +12,17 @@ data class Child(
     override var name: String,
     override var status: Status = Status.ACTIVE,
 
-    @Column(name= "AMOUNT")
+    @Column(name = "AMOUNT")
     var amount: Int = 0
 
 ) : Parent(
     id = id,
-    name = name
+    name = name,
+    status = status
 ) {
     override fun markInactive(): Parent {
         this.status = Status.INACTIVE
-        // FIXME: enabling this line makes it work, setting the right status when persisting the entity
+        // FIXME: this line makes the persist work, setting the right status when persisting the entity
         // super.status = Status.INACTIVE
         return this
     }
